@@ -4,19 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import {CalculatorComponent} from './calculator/calculator.component';
 import { HomeComponent } from './home/home.component';
+import {MathService} from './math.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [MathService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

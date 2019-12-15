@@ -1,0 +1,21 @@
+<p>Enter two numbers and click a mathematical operation to calculate the result</p>
+<div>
+  <label>X:
+    <input type="text" [(ngModel)]="XValue">
+  </label>
+</div>
+<div>
+  <label>Y:
+    <input type="text" [(ngModel)]="YValue">
+  </label>
+</div>
+<div>
+  <button (click)="onAddClick()">Add</button>
+  <button (click)="onSubClick()">Subtract</button>
+  <button (click)="onMultClick()">Multiply</button>
+  <button (click)="onDivClick()">Divide</button>
+  <button (click)="onPowClick()">Exponent</button>
+</div>
+<div>
+  <p>{{Results}}</p>
+</div>
