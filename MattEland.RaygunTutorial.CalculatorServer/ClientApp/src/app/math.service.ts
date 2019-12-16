@@ -16,7 +16,7 @@ export class MathService {
   }
 
   multiply(x: string, y: string): Promise<string> {
-    return this.http.get<string>(`${this.baseUrl}calculator/multiply/${x}/${y}`).toPromise();
+    return this.http.get<string>(`${this.baseUrl}calclator/multiply/${x}/${y}`).toPromise();
   }
 
   divide(x: string, y: string): Promise<string> {

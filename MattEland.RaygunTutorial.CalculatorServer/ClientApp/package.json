@@ -27,6 +27,7 @@
     "jquery": "3.4.1",
     "oidc-client": "^1.9.0",
     "popper.js": "^1.14.3",
+    "raygun4js": "^2.18.2",
     "rxjs": "^6.4.0",
     "zone.js": "~0.9.1"
   },

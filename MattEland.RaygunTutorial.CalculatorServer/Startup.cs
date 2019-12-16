@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mindscape.Raygun4Net.AspNetCore;
 
 namespace MattEland.RaygunTutorial.CalculatorServer
 {
@@ -26,6 +26,9 @@ namespace MattEland.RaygunTutorial.CalculatorServer
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            // Allow Raygun to register needed components / services
+            services.AddRaygun(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +44,10 @@ namespace MattEland.RaygunTutorial.CalculatorServer
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // Tell Raygun that we want it to log exceptions
+            // NOTE: This normally should only be set if env.IsDevelopment() is false
+            app.UseRaygun();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
